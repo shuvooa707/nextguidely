@@ -29,8 +29,9 @@ jobs:
           path: /home/runner/work/nextguidely/nextguidely/target/app.jar
 
       - name: Tag/Release on Push Action
-      - uses: rymndhng/release-on-push-action@v0.28.0
+        uses: rymndhng/release-on-push-action@v0.28.0
         with:
           release_branch: main
           tag_prefix: v
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          bump_version_scheme: ''
