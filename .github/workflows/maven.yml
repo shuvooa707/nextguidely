@@ -28,8 +28,8 @@ jobs:
           name: nextguidely-jar
           path: /home/runner/work/nextguidely/nextguidely/target/app.jar
 
-      - name: Tag Release
-        uses: K-Phoen/semver-release-action@v1
+      - name: Tag/Release on Push Action
+      - uses: rymndhng/release-on-push-action@v0.28.0
         with:
           release_branch: main
           tag_prefix: v
