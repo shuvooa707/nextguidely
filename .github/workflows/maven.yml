@@ -22,16 +22,16 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: ./mvnw package -DskipTests
+        run: ./mvnw test
 
-      - name: Upload JAR
-        uses: actions/upload-artifact@v4
-        with:
-          name: nextguidely-jar
-          path: /home/runner/work/nextguidely/nextguidely/target/app.jar
+#      - name: Upload JAR
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: nextguidely-jar
+#          path: /home/runner/work/nextguidely/nextguidely/target/app.jar
 
-      - name: Tag/Release on Push Action
-        uses: rymndhng/release-on-push-action@v0.28.0
-        with:
-          bump_version_scheme: minor
-          tag_prefix: v
+#      - name: Tag/Release on Push Action
+#        uses: rymndhng/release-on-push-action@v0.28.0
+#        with:
+#          bump_version_scheme: minor
+#          tag_prefix: v
