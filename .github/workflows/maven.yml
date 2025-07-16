@@ -27,3 +27,10 @@ jobs:
         with:
           name: nextguidely-jar
           path: /home/runner/work/nextguidely/nextguidely/target/app.jar
+
+      - name: Tag Release
+        uses: K-Phoen/semver-release-action@v1
+        with:
+          release_branch: main
+          tag_prefix: v
+          github_token: ${{ secrets.GITHUB_TOKEN }}
