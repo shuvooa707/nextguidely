@@ -95,6 +95,13 @@
                     </excludes>
                     <finalName>app</finalName>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal> <!-- This creates the runnable JAR -->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

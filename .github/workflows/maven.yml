@@ -26,4 +26,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: nextguidely-jar
-          path: /home/runner/work/nextguidely/nextguidely/target/nextguidely-0.0.1-SNAPSHOT.jar
+          path: /home/runner/work/nextguidely/nextguidely/target/app.jar
