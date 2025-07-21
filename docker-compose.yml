@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  app:
+    container_name: app
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    ports:
+      - "1111:3000"
+    depends_on:
+      - mysql
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3307/mydatabase
+      - SPRING_DATASOURCE_USERNAME=mydatabase
+      - SPRING_DATASOURCE_PASSWORD=secret
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  mysql:
+    container_name: 'guide-mysql'
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=mydatabase'
+      - 'MYSQL_PASSWORD=secret'
+      - 'MYSQL_ROOT_PASSWORD=verysecret'
+      - 'MYSQL_USER=myuser'
+    ports:
+      - '3307:3306'
